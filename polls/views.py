@@ -4,7 +4,10 @@ from .models import Question
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello world in the polls app {0}".format(q.question_text))
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_question_list])
+
+    return HttpResponse(output)
 
 def detail(request, question_id):
     return HttpResponse('Estas buscando la pregunta %s'%question_id)

@@ -1,5 +1,10 @@
+ul {
+    list-style-type: none;
+}
+
 li a {
-    color: green;
+    color: whitesmoke;
+    font-weight: bold;
 }
 
 body {
